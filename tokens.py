@@ -25,7 +25,8 @@ class Token(Enum):
     TAN = r'(tg|tan)'
     LOG = r'(log|ln|lg)'
     SPACE = r'\s'
-    UNKNOWN = r'?'
+    VARIABLE = r'([a-zA-Z_$][a-zA-Z_$0-9]*)'
+    UNKNOWN = '.'
 
 
 

@@ -8,8 +8,9 @@ class Lexer:
         pattern = re.compile('\s+')
         return re.sub(pattern, '', s)
 
-    def tokenize(s: str, token_enum):
-        """get string and token list, returns list of pairs (tocken instanceof tocken_enum, substring)"""
+    def greed_tokenizer(s: str, token_enum):
+        """get string and token list, returns list of pairs (tocken instanceof tocken_enum, substring)
+        """
         answer = []
         s1 = s
         while s1 != '':

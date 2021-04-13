@@ -10,9 +10,9 @@ from tokens import Token
 from lexer import Lexer
 import re
 
-s1 = '1+2+3+()sin'
-
-print (Lexer.tokenize(s1, Token))
+s1 = 'sin(x + y)'
+s1 = Lexer.preparator(s1)
+print (Lexer.greed_tokenizer(s1, Token))
 #
 # for tkn in Token:
 #     print(str(tkn.value))
