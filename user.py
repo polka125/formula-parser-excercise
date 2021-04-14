@@ -19,10 +19,15 @@ def testGrammar():
     for s in slist:
         print(gr.parse(s)[0])
 
+def test_parser():
+    from parser import ExprNonTerminals, ExprTerminals, rules, test_sequence
+    gr = Grammar(ExprTerminals, ExprNonTerminals, ExprNonTerminals.S0, rules)
+    print(gr.parse(test_sequence)[0])
+    print(gr.parse(test_sequence[:-1])[0])
 
 if __name__ == '__main__':
 
-    test_function_list = [testGrammar]
+    test_function_list = [test_parser]
 
     for test in test_function_list:
         test.__call__()
