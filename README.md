@@ -1,6 +1,6 @@
-#### Librart for string frormula parsing
+#### Library for string formula parsing
 
-Parsin math formula using context-free grammar approach 
+Parsing math formula using context-free grammar approach 
 (keywords: Chomsky normal form, CYK algorithm). 
 
 For more efficient and more simple algorithm see
