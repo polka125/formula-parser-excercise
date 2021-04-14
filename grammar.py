@@ -48,9 +48,11 @@ class Grammar:
             for rule in range(1, len(self.rules) + 1):
                 if len(self.rules[rule - 1][1]) == 1:
                     v = find_in_nonterm(self.rules[rule - 1][0])
-                    dp[1][s][v]["possib"] = True
-                    dp[1][s][v]["type"] = "term"
-                    dp[1][s][v]["value"] = self.rules[rule - 1][1][0]
+                    if token_list[s - 1] == self.rules[rule - 1][1][0]:
+                        dp[1][s][v]["possib"] = True
+                        dp[1][s][v]["type"] = "term"
+                        dp[1][s][v]["value"] = self.rules[rule - 1][1][0]
+
         for le in range(2, len(token_list) + 1):
             for s in range(1, len(token_list) - le + 2):
                 for p in range(1, le):

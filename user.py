@@ -6,12 +6,18 @@ from grammar import Grammar
 
 def testLexer():
     s1 = 'sIn(x + 10.2*y)'
-
     print (Lexer.tokenize(s1, Token))
 
 def testGrammar():
-    gr = Grammar(['(', ')'], ['S', 'L', 'BL', 'BR'], 'S', [('S', ['BL', 'L']), ('S', ['BL', 'BR']), ('L', ['S', 'BR']), ('BL', ['(']), ('BR', [')'])])
-    print(gr.parse(['(', '(', ')', ')', ')']))
+    gr = Grammar(['(', ')'], ['S', 'S1', 'BL', 'BR'], 'S', [('S', ['S', 'S']), ('S', ['BL', 'S1']), ('S1', ['S', 'BR']), ('BL', ['(']), ('BR', [')']), ('S', ['BL', 'BR'])])
+    s1 = '()'
+    s2 = ')('
+    s3 = '(((()))()())'
+    s4 = '((()())((())'
+    s5 = '('
+    slist = [s1, s2, s3, s4, s5]
+    for s in slist:
+        print(gr.parse(s)[0])
 
 
 if __name__ == '__main__':
