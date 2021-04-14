@@ -6,6 +6,7 @@ class Token(Enum):
     LEFT_BRACKET = r'\('
     RIGHT_BRACKET = r'\)'
     NUMBER = r'\d+(?:\.\d*|)'
+    INFIXLASSOC = r'(?:\+|-|*|/)'
     PLUS = r'\+'
     MINUS = r'\-'
     MULTIPLY = r'\*'
